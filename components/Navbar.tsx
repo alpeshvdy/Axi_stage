@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { NAV_ITEMS } from '../constants';
+import Logo from './Logo';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,14 +22,12 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">A</span>
-            </div>
+          <a href="#home" className="flex items-center space-x-3 group">
+            <Logo className="w-10 h-10 transform group-hover:scale-110 transition-transform" />
             <span className="text-2xl font-heading font-bold tracking-tight text-white hidden sm:block">
               Axionera<span className="text-indigo-500">.</span>
             </span>
-          </div>
+          </a>
           
           <div className="flex items-center space-x-6 md:space-x-8">
             {NAV_ITEMS.map((item) => (
